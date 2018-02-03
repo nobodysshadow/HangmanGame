@@ -3,8 +3,8 @@
 Main application for the game
 """
 # Import necessary modules and the wordlist
-import library_start.py
-import game_library.py
-import wordList.py
+import lib.library_start
+import lib.game_library
+import lib.wordList
 
 # Start of the game

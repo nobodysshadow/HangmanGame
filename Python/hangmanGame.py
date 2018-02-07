@@ -3,9 +3,10 @@
 Main application for the game
 """
 # Import necessary modules and the wordlist
-import lib.library_start as start
-import lib.game_library as game
-import lib.wordList
+import Lib
 
 # Start of the game
-
+wrongGuess = ""
+searchWord = Lib.start.getRandomWord()
+status = Lib.start.initStatus(searchWord)
+Lib.start.displayBoard(wrongGuess, status)

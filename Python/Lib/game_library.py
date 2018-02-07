@@ -28,14 +28,19 @@ def show(guessed_letters, word):
     guessed_letters: The guessed letters.
     word: The secret word.
     """
+    #Variables
     letter_list = []
-    for i in guessed_letters:
-        for letters_in_word in list(word):
-            if i == letters_in_word:
-                letter_list.append(i + " ")
-            else:
-                letter_list.append("_ ")
-    print(letter_list)            
+
+    guessed_letters = list(str(guessed_letters).upper())
+    word = str(word).upper()
+
+    for i in word:
+        letter_list.append("_")
+    for i in range(len(list(word))):
+        for e in guessed_letters:
+            if e == word[i]:
+                letter_list[i] = e
+    print (str(letter_list).upper())
     return letter_list
 
 def check_guess(guess, word, tries, guessed_letters, letter_list):
@@ -78,6 +83,8 @@ def right_guess(word, guessed_letters, letter_list):
     """
     win = 1
     win_list = []
+    guessed_letters = list(str(guessed_letters).upper())
+    word = str(word).upper()
     print("Du hast richtig geraten")
     for i in list(word):
         for letters in guessed_letters:
@@ -89,3 +96,5 @@ def right_guess(word, guessed_letters, letter_list):
         if i != 1:
             win = 0
     return win
+
+show(list("abcdefghijklmnopqrstuvwxyz"), "Tanzen")

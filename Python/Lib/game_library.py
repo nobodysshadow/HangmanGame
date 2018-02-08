@@ -97,15 +97,29 @@ def remove_try(tries):
 
 
 def get_wrong_guesses(guessed_letters, word):
-    #Variables
+    # Variables
     word = list(word.upper())
     letters = guessed_letters
 
-    #Get wrong guesses
+    # Get wrong guesses
     for i in letters:
         if i in word:
             letters.remove(i)
     return letters
+
+
+def is_guess_correct(guess, word):
+    if guess in list(word):
+        print("You have guessed correctly")
+    else:
+        wrong_guess()
+
+def won(word_stats):
+    # Variables
+    output = False
+    if all in word_stats != "_":
+        output = True
+    return output
 
 
 

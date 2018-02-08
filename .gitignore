@@ -1,4 +1,4 @@
 Workspace.code-workspace
-Python/Lib/__pycache__/__init__.cpython-36.pyc
-Python/Lib/__pycache__/game_library.cpython-36.pyc
-Python/Lib/__pycache__/library_start.cpython-36.pyc
+HangmanGame.code-workspace
+Python/Lib/__pycache__/*
+.spyproject/*

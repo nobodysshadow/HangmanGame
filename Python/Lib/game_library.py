@@ -8,6 +8,7 @@ def guess(word, guessed_letters):
     """
     # Variables
     possible = False
+    New_guessed_letters = guessed_letters
 
     # Get the guess
     while possible == False:
@@ -21,16 +22,18 @@ def guess(word, guessed_letters):
             # Letter
             # Is the guess already guessed?
             possible = guess_is_guessed(guessed_letters, guess)
-            print("")
+    else:
+        New_guessed_letters.append(guess.upper())
+
 
     # Retrun the guess
-    return guess
+    return New_guessed_letters
 
 def player_guesses_the_word(guess, word):
     # Variables
     output = False
     # Is it the correct word
-    if guess == word:
+    if guess.upper() == word.upper():
         output = True
     else:
         wrong_guess()
@@ -52,7 +55,7 @@ def guess_is_guessed(guessed_letters, guess):
     for i in guessed_letters:
         if i == guess:
             output = False
-    
+
     # Is guess already guessed?
     if output == False:
         not_possible()
@@ -60,7 +63,23 @@ def guess_is_guessed(guessed_letters, guess):
     # Return output
     return output
 
+def get_word_stats(guessed_letters, word):
+    # Variables
+    word_stats = []
+    word = word.upper()
+    # Replace letters in the word with a "_".
+    for i in list(word):
+        word_stats.append("_")
+    # Replace the "_" with the right letter, when the letter is guessed.
+    for i in range(len(list(word))):
+        for e in guessed_letters:
+            if list(word)[i] == e:
+                word_stats[i] = e
+    return word_stats
 
+def remove_try(tries):
+    return tries - 1
 
 if __name__ == "__main__":
-    guess("World", [])
+    #guess("World", [])
+    print(get_word_stats(list("TANZEN"), "Tanzen"))

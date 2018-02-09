@@ -6,7 +6,19 @@ Main application for the game
 import Lib
 
 # Start of the game
-wrongGuess = ""
-searchWord = Lib.start.getRandomWord()
-status = Lib.start.initStatus(searchWord)
-Lib.start.displayBoard(wrongGuess, status)
+# Variables
+tries = 6
+guessed_letters = []
+guess = ""
+
+#searchWord = Lib.start.getRandomWord()
+#while tries <= 6:
+#    Lib.start.displayBoard(Lib.game.get_wrong_guesses(guessed_letters, searchWord), Lib.game.get_word_stats(guessed_letters, searchWord))
+#    output = Lib.game.guess(searchWord, guessed_letters)[:]
+#    guess = output[0]
+#    guessed_letters = output[1]
+#    if Lib.game.player_guesses_the_word(guess, searchWord) == True:
+#        print("You have won!")
+#        break
+#    else:
+#        print(guessed_letters)

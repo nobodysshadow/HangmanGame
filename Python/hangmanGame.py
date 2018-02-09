@@ -7,9 +7,7 @@ import Lib
 
 # Start of the game
 # Variables
-tries = 6
 guessed_letters = []
-guess = ""
 game = False
 
 #searchWord = Lib.start.getRandomWord()
@@ -26,8 +24,9 @@ game = False
 
 searchWord = Lib.start.getRandomWord()
 while game == False:
-    Lib.start.displayBoard(Lib.game.missed_letters(guessed_letters, searchWord), Lib.game.stats(guessed_letters, searchWord))
+    stats = Lib.game.stats(guessed_letters, searchWord)
+    Lib.start.displayBoard(Lib.game.missed_letters(guessed_letters, searchWord), stats)
+    if Lib.game.won(stats, searchWord):
+        break
     print(searchWord)
     guessed_letters.append(Lib.game.guess())
-    print (guessed_letters)
-    

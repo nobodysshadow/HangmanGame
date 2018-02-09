@@ -10,6 +10,7 @@ import Lib
 tries = 6
 guessed_letters = []
 guess = ""
+game = False
 
 #searchWord = Lib.start.getRandomWord()
 #while tries <= 6:
@@ -22,3 +23,11 @@ guess = ""
 #        break
 #    else:
 #        print(guessed_letters)
+
+searchWord = Lib.start.getRandomWord()
+while game == False:
+    Lib.start.displayBoard(Lib.game.missed_letters(guessed_letters, searchWord), Lib.game.stats(guessed_letters, searchWord))
+    print(searchWord)
+    guessed_letters.append(Lib.game.guess())
+    print (guessed_letters)
+    

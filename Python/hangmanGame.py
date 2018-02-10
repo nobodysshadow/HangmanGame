@@ -24,9 +24,17 @@ game = False
 
 searchWord = Lib.start.getRandomWord()
 while game == False:
+    possible = False
+    guess = ""
     stats = Lib.game.stats(guessed_letters, searchWord)
     Lib.start.displayBoard(Lib.game.missed_letters(guessed_letters, searchWord), stats)
     if Lib.game.won(stats, searchWord):
         break
-    print(searchWord)
-    guessed_letters.append(Lib.game.guess())
+    while possible == False:
+        guess = Lib.game.guess()
+        possible = Lib.game.check_valid_guess(guess, guessed_letters)
+    if len(list(guess)) > 1:
+        if Lib.game.word_correct(guess, searchWord):
+            print("You have won!")
+            break   
+    guessed_letters.append(guess)

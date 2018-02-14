@@ -1,4 +1,4 @@
-Python/Lib/__pycache__/
 Workspace.code-workspace
 HangmanGame.code-workspace
-.spyproject/*
+Python/Lib/__pycache__/
+.spyproject/

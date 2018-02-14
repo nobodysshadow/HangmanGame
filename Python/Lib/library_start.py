@@ -63,7 +63,11 @@ def getRandomWord(length = 3):
                                   Amount of letter (3-6) the word should contain.
     
     Returns:
+<<<<<<< HEAD
         [string]: a randomly chossen word of the wordlist.
+=======
+        [string]: a randomly chosen word of the wordlist.
+>>>>>>> Bug1a2
     """
     if length == 3:
         wordIndex = random.randint(0, len(WORDLIST3) - 1)
@@ -88,11 +92,28 @@ def displayBoard(missedLetter,wordStatus):
         wordStatus ([string]): The aktuell Status of the word to guess 
                                '_ _ _ _ _ _' at the beginning.
     """
+<<<<<<< HEAD
     print("Your missed letters:  ",missedLetter)
     print(HANGMAN_PICS[len(missedLetter)])
     print()
     print(wordStatus)
     print()
+=======
+    # print(len(missedLetter), len(HANGMAN_PICS))
+    # Check that the amount of missed letters does not exceed the hangman pics
+    if len(missedLetter) < len(HANGMAN_PICS):
+        print("Your missed letters:  ",missedLetter)
+        print(HANGMAN_PICS[len(missedLetter)])
+        print()
+        print(wordStatus)
+        print()
+    else:
+        print("Sorry! you have used up all your guesses.")
+        print()
+        print("Your missed letters:  ",missedLetter)
+        print(HANGMAN_PICS[len(missedLetter)])
+        print(wordStatus)
+>>>>>>> Bug1a2
 
 def initStatus(searchWord):
     """Initialize Status
@@ -110,4 +131,13 @@ def initStatus(searchWord):
             statusString += "_"
         else:
             statusString += " "
+<<<<<<< HEAD
     return statusString
+=======
+    return statusString
+
+if __name__ == "__main__":
+    displayBoard(['C', 'D', 'E', 'F', 'G'],['B', 'A', '_'])
+    displayBoard(['C', 'D', 'E', 'F', 'G', 'H'],['B', 'A', '_'])
+    displayBoard(['C', 'D', 'E', 'F', 'G', 'H', 'I'],['B', 'A', '_'])
+>>>>>>> Bug1a2

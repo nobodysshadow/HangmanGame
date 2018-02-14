@@ -63,7 +63,7 @@ def getRandomWord(length = 3):
                                   Amount of letter (3-6) the word should contain.
     
     Returns:
-        [string]: a randomly chossen word of the wordlist.
+        [string]: a randomly chosen word of the wordlist.
     """
     if length == 3:
         wordIndex = random.randint(0, len(WORDLIST3) - 1)
@@ -89,16 +89,15 @@ def displayBoard(missedLetter,wordStatus):
                                '_ _ _ _ _ _' at the beginning.
     """
     # Check that the amount of missed letters does not exceed the hangman pics
-    if len(missedLetter) > len(HANGMAN_PICS):
-        print("Sorry! you have used up all your guesses.")
-        print("The searched word was: ", searchWord)
-        print()
-        break
-    else:
+    if len(missedLetter) <= len(HANGMAN_PICS):
         print("Your missed letters:  ",missedLetter)
         print(HANGMAN_PICS[len(missedLetter)])
         print()
         print(wordStatus)
+        print()
+    else:
+        print("Sorry! you have used up all your guesses.")
+        print("The searched word was: ", searchWord)
         print()
 
 def initStatus(searchWord):

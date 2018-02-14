@@ -89,7 +89,8 @@ def displayBoard(missedLetter,wordStatus):
                                '_ _ _ _ _ _' at the beginning.
     """
     # Check that the amount of missed letters does not exceed the hangman pics
-    if len(missedLetter) <= len(HANGMAN_PICS):
+    # print(len(missedLetter), len(HANGMAN_PICS))
+    if len(missedLetter) < len(HANGMAN_PICS):
         print("Your missed letters:  ",missedLetter)
         print(HANGMAN_PICS[len(missedLetter)])
         print()
@@ -97,8 +98,10 @@ def displayBoard(missedLetter,wordStatus):
         print()
     else:
         print("Sorry! you have used up all your guesses.")
-        print("The searched word was: ", searchWord)
         print()
+        print("Your missed letters:  ",missedLetter)
+        print(HANGMAN_PICS[len(missedLetter)])
+        print(wordStatus)
 
 def initStatus(searchWord):
     """Initialize Status
@@ -117,3 +120,8 @@ def initStatus(searchWord):
         else:
             statusString += " "
     return statusString
+
+if __name__ == "__main__":
+    displayBoard(['C', 'D', 'E', 'F', 'G'],['B', 'A', '_'])
+    displayBoard(['C', 'D', 'E', 'F', 'G', 'H'],['B', 'A', '_'])
+    displayBoard(['C', 'D', 'E', 'F', 'G', 'H', 'I'],['B', 'A', '_'])

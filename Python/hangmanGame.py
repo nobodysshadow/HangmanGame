@@ -28,6 +28,7 @@ while game == False:
         if Lib.game.word_correct(guess, searchWord):
             print("You have won!")
             game = True
+    # Amount of missed letters does not exceed the hangman pictures.
     elif len(Lib.game.missed_letters(guessed_letters, searchWord)) > 6:
         print("Sorry you loose!")
         print("The searched word was: ", searchWord)

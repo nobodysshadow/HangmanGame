@@ -88,11 +88,18 @@ def displayBoard(missedLetter,wordStatus):
         wordStatus ([string]): The aktuell Status of the word to guess 
                                '_ _ _ _ _ _' at the beginning.
     """
-    print("Your missed letters:  ",missedLetter)
-    print(HANGMAN_PICS[len(missedLetter)])
-    print()
-    print(wordStatus)
-    print()
+    # Check that the amount of missed letters does not exceed the hangman pics
+    if len(missedLetter) > len(HANGMAN_PICS):
+        print("Sorry! you have used up all your guesses.")
+        print("The searched word was: ", searchWord)
+        print()
+        break
+    else:
+        print("Your missed letters:  ",missedLetter)
+        print(HANGMAN_PICS[len(missedLetter)])
+        print()
+        print(wordStatus)
+        print()
 
 def initStatus(searchWord):
     """Initialize Status

@@ -23,15 +23,15 @@ def stats(guessed_letters, word):
 def missed_letters(guessed_letters, word):
     missed_letters = guessed_letters[:]
     word = list(str(word).upper())
-    #print(guessed_letters, missed_letters)
-    print(word)
+    # print(guessed_letters, missed_letters)
+    # print(word)
     for i in guessed_letters:
         if i in word:
-            print(i)
-            print(missed_letters)
+            # print(i)
+            # print(missed_letters)
             missed_letters.remove(i)
-            print (missed_letters)
-    #print(guessed_letters, missed_letters)
+            # print (missed_letters)
+    # print(guessed_letters, missed_letters)
     return missed_letters
 
 
@@ -41,10 +41,10 @@ def guess_right(guess, word):
     output = False
 
     if guess in word:
-        print("The guess is correct")
+        print("The guess is correct.")
         output = True
     else:
-        print("The guess is false")
+        print("The guess is wrong.")
         output = False
     return output
 

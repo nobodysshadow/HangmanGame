@@ -1,10 +1,20 @@
 def guess():
+    """
+    Gets the guess from the player.
+    return: The Guess form the player.
+    """
     guess = input("Guess a letter: ")
     return guess.upper()
 
 
 
 def stats(guessed_letters, word):
+    """
+    Calculates the latest word stats.
+    guessed_letters: The already guessed letters.
+    word: The secret word.
+    return: The latest word stats.
+    """
     # Variables
     stats = []
     word = list(str(word).upper())
@@ -21,6 +31,12 @@ def stats(guessed_letters, word):
 
 
 def missed_letters(guessed_letters, word):
+    """
+    Gets the missed letters.
+    guessed_letters: The already guessed letters.
+    word: The secret word.
+    return: The missed letters.
+    """
     missed_letters = guessed_letters[:]
     word = list(str(word).upper())
     # print(guessed_letters, missed_letters)
@@ -37,6 +53,12 @@ def missed_letters(guessed_letters, word):
 
 
 def guess_right(guess, word):
+    """
+    Check if the guess is right and print a little message.
+    guess: The latest player guess.
+    word: The secret word.
+    return: bool You have won(True/False).
+    """
     # Variables
     output = False
 
@@ -51,6 +73,12 @@ def guess_right(guess, word):
 
 
 def won(stats, word):
+    """
+    Checks you have won.
+    stats: The latest word stats.
+    word: The secret word.
+    return: bool Won?
+    """
     output = False
     if ''.join(stats) == word.upper():
         print("You have won!")
@@ -60,6 +88,12 @@ def won(stats, word):
 
 
 def check_valid_guess(guess, guessed_letters):
+    """
+    Have you already guessed this letters.
+    guess: The latest player guess.
+    guessed_letters: The already guessed letters.
+    return: bool Guess is valid?
+    """
     output = False
     if guess != None:
         if guess in list("ABCDEFGHIJKLMNOPQRSTUVWXYZ") and guess not in guessed_letters:
@@ -71,6 +105,12 @@ def check_valid_guess(guess, guessed_letters):
 
 
 def word_correct(guess, word):
+    """
+    Is the word correct?
+    guess: The latest player guess.
+    word: The secret word.
+    return: bool You have won?
+    """
     output = False
     word = word.upper()
     if guess == word:
